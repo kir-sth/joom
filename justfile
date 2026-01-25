@@ -25,15 +25,15 @@ clean:
     {{pre-commit}} clean
     {{ruff}} clean
 
-# upgrade dependencies and rebuild the jupyter notebook kernel
+# install dependencies and rebuild the jupyter notebook kernel
 setup:
-    uv sync --upgrade
+    uv sync
     uv pip install -e .
     uv run python -m ipykernel install --user --name joom
     uv run jupyter kernelspec list
 
-# upgrade dependencies and rebuild the pre-commit hooks
+# install dependencies and rebuild the pre-commit hooks
 setup-pre-commit:
-    uv sync --upgrade
+    uv sync
     {{pre-commit}} autoupdate
     {{pre-commit}} install
