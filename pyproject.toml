@@ -9,7 +9,56 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
+    "ipykernel>=7.1.0",
     "numpy>=2.4.1",
     "orjson>=3.11.5",
     "pandas>=3.0.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "ruff>=0.14.14",
+]
+
+[tool.commitizen]
+version = "0.0.0"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # Pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "W",    # pycodestyle warnings
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+    "PIE",  # flake8-pie
+    "PL",   # Pylint
+    "TCH",  # flake8-type-checking
+    "ARG",  # flake8-unused-arguments
+    "PTH",  # flake8-use-pathlib
+    "PLR",  # Pylint refactor
+    "PLW",  # Pylint warnings
+    "COM",  # flake8-commas
+]
+ignore = [
+    "E501",
+    "COM812",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["wellness"]
+split-on-trailing-comma = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
