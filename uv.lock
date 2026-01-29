@@ -322,7 +322,6 @@ source = { virtual = "." }
 dependencies = [
     { name = "httpx" },
     { name = "ipykernel" },
-    { name = "numpy" },
     { name = "orjson" },
     { name = "pandas" },
 ]
@@ -337,7 +336,6 @@ dev = [
 requires-dist = [
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "ipykernel", specifier = ">=7.1.0" },
-    { name = "numpy", specifier = ">=2.4.1" },
     { name = "orjson", specifier = ">=3.11.5" },
     { name = "pandas", specifier = ">=3.0.0" },
 ]

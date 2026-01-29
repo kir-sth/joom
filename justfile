@@ -16,7 +16,7 @@ lint:
 format:
     {{ruff}} format {{src_dir}}/
 
-# linter and formatter
+# linter + formatter
 check: lint format
 
 # cleaning cache
@@ -25,11 +25,9 @@ clean:
     {{pre-commit}} clean
     {{ruff}} clean
 
-# install dependencies and rebuild the jupyter notebook kernel
+# install dependencies
 setup:
     uv sync
-    uv pip install -e .
-    uv run python -m ipykernel install --user --name joom
     uv run jupyter kernelspec list
 
 # install dependencies and rebuild the pre-commit hooks
