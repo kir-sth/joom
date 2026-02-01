@@ -22,16 +22,20 @@ check: lint format
 # cleaning cache
 clean:
     rm -rf {{src_dir}}/__pycache__ {{src_dir}}/**/__pycache__
+    rm -rf {{src_dir}}/**/.ipynb_checkpoints
     {{pre-commit}} clean
     {{ruff}} clean
 
-# install dependencies
-setup:
-    uv sync
-    uv run jupyter kernelspec list
-
-# install dependencies and rebuild the pre-commit hooks
-setup-pre-commit:
-    uv sync
+# setup environment for dev
+setup-dev:
+    uv sync --group dev
     {{pre-commit}} autoupdate
     {{pre-commit}} install
+
+# setup environment for notebook
+setup-notebook:
+    uv sync --group notebook
+
+# start jupyter lab in browser
+lab: setup-notebook
+    uv run jupyter lab ./notebooks

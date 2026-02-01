@@ -1,10 +1,11 @@
 # Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
+__pycache__
 
 # Virtual environments
 .venv
+
+# Jupyter-generated files
+.ipynb_checkpoints
+
+# Ruff cache
+.ruff_cache

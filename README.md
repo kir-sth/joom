@@ -1,35 +1,39 @@
-### Пререквизиты
-
+## Пререквизиты
 - git
 - python 3.12
 - uv
-- just (опционально)
+- just
 
-### Клонирование
-
+## Клонирование
 ```bash
 git clone https://github.com/kir-sth/joom.git
 cd joom
 ```
 
-### Установка зависимостей
+## Структура проекта
+
+- `notebooks/dpx_shutdown_impact.ipynb` — основной ноутбук с анализом
+
+- `notes/task.md` — формулировка задания
+
+- `notes/end-to-end.md` — описание логистического процесса и данных
+
+## Установка окружения
+
+### Для разработки:
 
 ```bash
-uv sync
-uv pip install -e .
-uv run python -m ipykernel install --user --name joom
+just setup-dev
 ```
 
-или
+### Для работы с ноутбуком:
 
 ```bash
-just setup
+just setup-notebook
 ```
 
-### Запуск
+## Запуск ноутбука
 
 ```bash
-uv run jupyter notebook
+just lab
 ```
-
-Открыть в браузере `playground.ipynb`, выбрать ядро `joom` и выполнить ячейки
