@@ -38,4 +38,4 @@ setup-notebook:
 
 # start jupyter lab in browser
 lab: setup-notebook
-    uv run jupyter lab ./notebooks
+    uv run jupyter lab {{src_dir}}/notebooks

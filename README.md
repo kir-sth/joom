@@ -12,7 +12,9 @@ cd joom
 
 ## Структура проекта
 
-- `notebooks/dpx_shutdown_impact.ipynb` — основной ноутбук с анализом
+- `notebooks/dpx_shutdown_analysis.ipynb` — основной ноутбук с анализом
+
+- `notes/dpx_shutdown_report.md` — итоговый отчет по анализу
 
 - `notes/task.md` — формулировка задания
 
